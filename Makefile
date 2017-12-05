@@ -25,7 +25,7 @@ $(OBJ_FILES): $(BIN_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 run:
-	$(EXEC_FILE) ${args}
+	taskset -c 0 $(EXEC_FILE) ${args}
 
 clean:
 	rm -rf */*.o */*.a */*.so
