@@ -34,8 +34,8 @@ mrproper: clean
 	rm -rf $(EXEC_FILE)
 
 pdf:
-	pdflatex docs/$(RAPPORT)
+	pdflatex $(RAPPORT).tex
 	rm *.aux *.log
 
 pkg: mrproper
-	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) Makefile guan_lefranc_tp5.md
+	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) Makefile $(RAPPORT).pdf README.md

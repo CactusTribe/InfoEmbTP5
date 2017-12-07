@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{url}
+
+\hbadness=99999
+\title{TP5 - InfoEmb}
+\author{Liang Guan, Joaquim Lefranc}
+\date{Décembre 2017}
+
+\begin{document}
+\fontfamily{cmr}
+\maketitle
+
+\section{Estimations}
+\textbf{Initiale :} 2h
+\textbf{Réel :} 3h30
+
+\section{L'idée générale}
+	Nous avons un verrou partagé, et une syncronization avec semaphores pour garantir l'ordre des threads. Voilà voilà,
+	quoi d'autre, il faut penser à être en mode sudo pour \newline
+	\textbf{PTHREAD\_EXPLICIT\_SCHED} suivi de \textbf{taskset -c 0}.
+	Nous utilisons également des flags pour la notification d'exécution du thread de priorité medium.
+
+\end{document}
