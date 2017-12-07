@@ -25,7 +25,7 @@ $(OBJ_FILES): $(BIN_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 run:
-	taskset -c 0 $(EXEC_FILE) ${args}
+	sudo taskset -c 0 $(EXEC_FILE) ${args}
 
 clean:
 	rm -rf */*.o */*.a */*.so
@@ -38,4 +38,4 @@ pdf:
 	rm *.aux *.log
 
 pkg: mrproper
-	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) $(HEADER_DIR) $(LIB_DIR) Makefile tests/ *.py *.pdf
+	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) Makefile 

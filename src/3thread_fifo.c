@@ -1,3 +1,5 @@
+// Liang Guan, Joaquim Lefranc
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -22,7 +24,7 @@ void Thread1()
 {
   sem_wait(&sem1);
   pthread_mutex_lock(&verrou);
-  printf("Thread_1 : HIGH Pritority\n");
+  //printf("Thread_1 : HIGH Pritority\n");
   sem_post(&sem3);
   pthread_mutex_unlock(&verrou);
   if(medium_executed) inversion = 1;
@@ -32,7 +34,7 @@ void Thread2()
 {
   sem_wait(&sem2);
   pthread_mutex_lock(&verrou);
-  printf("Thread_2 : MEDIUM Pritority\n");
+  //printf("Thread_2 : MEDIUM Pritority\n");
   pthread_mutex_unlock(&verrou);
   medium_executed = 1;
 }
@@ -41,7 +43,7 @@ void Thread3()
 {
   sem_wait(&sem3);
   pthread_mutex_lock(&verrou);
-  printf("Thread_3 : LOW Pritority\n");
+  //printf("Thread_3 : LOW Pritority\n");
   sem_post(&sem2);
   sem_post(&sem1);
   pthread_mutex_unlock(&verrou);
