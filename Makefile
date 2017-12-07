@@ -38,4 +38,4 @@ pdf:
 	rm *.aux *.log
 
 pkg: mrproper
-	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) Makefile 
+	tar -zcvf $(TPNAME).tgz $(BIN_DIR) $(SRC_DIR) Makefile guan_lefranc_tp5.md
